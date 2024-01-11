@@ -75,22 +75,22 @@ WSGI_APPLICATION = 'ApplyProject.wsgi.application'
 # Database
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'malavikadb',
-        'USER': 'postgres',
-        'PASSWORD': 'malavika',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'malavikadb',
+#         'USER': 'postgres',
+#         'PASSWORD': 'malavika',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
 
 
 # Password validation
@@ -133,3 +133,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'bhanummarolix@gmail.com'
+EMAIL_HOST_PASSWORD = 'zbka suqj jezu hfpj'
