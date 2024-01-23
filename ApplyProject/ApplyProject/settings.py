@@ -75,22 +75,22 @@ WSGI_APPLICATION = 'ApplyProject.wsgi.application'
 # Database
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'malavikadb',
-#         'USER': 'postgres',
-#         'PASSWORD': 'malavika',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bhanudb',
+        'USER': 'postgres',
+        'PASSWORD': 'bhanu564@',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
 
 
 # Password validation
