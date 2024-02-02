@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import cloudinary
+import cloudinary_storage
+import cloudinary.uploader
+import cloudinary.api
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -39,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'ApplyApp',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -134,9 +140,45 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# STATICFILES_DIRS=[
+#     BASE_DIR/"static"
+# ]
+
+# MEDIA_ROOT=BASE_DIR/"media"
+# MEDIA_URL="/media/"
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
+MEDIA_URL = '/media/'
+
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'bhanummarolix@gmail.com'
 EMAIL_HOST_PASSWORD = 'zbka suqj jezu hfpj'
+
+DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dar5zqjvi',
+    'API_KEY': '419399352786121',
+    'API_SECRET': 'i3u6n1dZj2D6ktlJiRr4t8wWTK4',
+    'API_ENVIRONMENT_VARIABLE':'cloudinary://419399352786121:i3u6n1dZj2D6ktlJiRr4t8wWTK4@dar5zqjvi'
+}
+
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
+STATICFILES_STORAGE='cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+
+DEFAULT_FILE_STORAGE1 = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
+
+
+CKEDITOR_UPLOAD_PATH = DEFAULT_FILE_STORAGE
+
+
+CKEDITOR_CONFIGS = {
+  'default': {
+      'toolbar': None,
+  },
+ }
